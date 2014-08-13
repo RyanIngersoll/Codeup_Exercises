@@ -35,12 +35,19 @@ and there is $food_available or $have_money then you will eat.
 */
 
 
-$hungry = FALSE;
+$hungry = TRUE;
 $food_available = TRUE;
+$have_money = TRUE;
 
-if ($hungry == FALSE && $food_available) {
-	echo 'we are fed and good to go'
+if ($hungry == TRUE && $food_available == TRUE) 
+	if($have_money == TRUE) {
+		echo "we are fed and good to go"
 }
+else {
+	echo "tough break"
+};
+
+
 
 
 
