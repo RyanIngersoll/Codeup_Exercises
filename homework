@@ -1,0 +1,67 @@
+homework
+
+<?php
+
+$primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
+
+echo $primes[3];
+
+echo $primes;
+
+//associate array
+
+// steps to create a repo
+//create new repo in github follow steps
+
+// touch README.md
+// git init
+// git add README.md
+// git commit -m "first commit"
+// git remote add origin git@github.com:RyanIngersoll/review.git
+// git push -u origin master
+
+
+
+
+
+$car = ['year' => '1982',
+		'model => 'ford',
+		'color' => 'red',
+
+		];
+
+var_dump($car);
+
+//multi dimention array
+
+$car = [
+	['josh'=> 'delorian'],
+	['jillian'=> 'chevy'],
+	['thomas' => 'jeep'],
+	[],
+	[],
+	[],
+];
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
+
