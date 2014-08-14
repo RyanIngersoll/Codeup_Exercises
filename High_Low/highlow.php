@@ -22,17 +22,32 @@ Display number of guesses it gook after outputting 'Good Guess!'
 */
 
 fwrite(STDOUT, "WELCOME to HIGH/LOW\n");
-$randomNumber = mt_rand(1, 100);
-$numGuesses = 0;
-$numWins = 0;
+
+
+if ($argc > 1) {
+	$randomNumber = mt_rand($argv[1],$argv[2]);
+	fwrite(STDOUT," min = $argv[1] max = $argv[2] ");
+
+	fwrite(STDOUT, "Please guess a number between $argv[1] and $argv[2]\n");
+}
+else{
+	$randomNumber = mt_rand(1,100);
+	fwrite(STDOUT, "Please guess a number between 1 and 100\n");
+}
+
+
+	$numGuesses = 0;
+	$numWins = 0;
+
 
 usleep(50000);
 fwrite(STDOUT, "To exit game type exit(0), if stuck hit ctrl-c\n");
-fwrite(STDOUT, "Lets Play\n");
-usleep(50000);
-fwrite(STDOUT, "Please guess a number between 1 and 100.\n");
 
-$guess = fgets(STDIN);
+usleep(50000);
+
+
+
+$guess = trim(fgets(STDIN));
 
 usleep(50000);
 
@@ -41,8 +56,8 @@ do{
 	if ($guess<$randomNumber) {
 		fwrite(STDOUT, "sorry but your WAY off, try a little higher\n");
 		$numGuesses++;
-		fwrite(STDOUT, "your number of guesses = "  + $numGuesses + "\n");
-		fwrite(STDOUT, "guess again");
+		fwrite(STDOUT, "your number of guesses = $numGuesses \n");
+		fwrite(STDOUT, "guess again \n");
 		$guess = trim(fgets(STDIN));
 		
 	}
@@ -50,8 +65,8 @@ do{
 	elseif ($guess>$randomNumber) {
 		fwrite(STDOUT, "sorry but your WAY off, try a little lower\n");
 		$numGuesses++;
-		fwrite(STDOUT, "your number of guesses = " + $numGuesses + "\n");
-		fwrite(STDOUT, "guess again");
+		fwrite(STDOUT, "your number of guesses = $numGuesses \n");
+		fwrite(STDOUT, "guess again \n");
 		$guess = trim(fgets(STDIN));
 		
 	}
@@ -61,14 +76,10 @@ do{
 		$numGuesses++;
 		$numWins++;
 		usleep(50000);
-		fwrite(STDOUT, "you got it after only " + $numGuesses + " guesses\n");
+		fwrite(STDOUT, "you got it after only $numGuesses guesses\n");
 		usleep(50000);
-		fwrite(STDOUT, "you have a total of" + $numWins + " out of " + $numGuesses 
-			+ " guesses\n");
-		usleep(50000);
-		fwrite(STDOUT, "your win percentage is " + (($numWins/$numGuesses)*100) + "%\n");
-		usleep(50000);
-		fwrite(STDOUT, "do you want to play again, yes or no?\n");
+		die();
+		/*fwrite(STDOUT, "do you want to play again, yes or no?\n");
 		$playAgain = trim(fgets(STDIN));
 		usleep(50000);
 
@@ -81,7 +92,7 @@ do{
 				fwrite(STDOUT, "Please guess a new number between 1 and 100.\n");
 				$guess = trim(fgets(STDIN));
 				
-			}
+			}*/
 
 		}
 
