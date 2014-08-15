@@ -7,19 +7,23 @@
 for ($num = 1; $num<= 100; $num++){
 
 	if (($num % 3 == 0) && ($num % 5 == 0)) {
-		echo "$num - FizzBuzz \n";
+		echo "{$num} - FizzBuzz \n";
 	}
 
 	elseif($num % 5 == 0){
 
-		echo "$num - Buzz \n";
+		echo "{$num} - Buzz \n";
 	}
 	elseif($num % 3 == 0){
-		echo "$num - Fizz \n";
+		echo "{$num} - Fizz \n";
 	}	
 	else {
-	 	echo "$num \n";
+	 	echo "{$num} \n";
 	}
 }
 
 ?>
+
+for (i = 1; i < 100; i++){
+ echo i%15? i%5? i%3? i: 'fizz': 'buzz': 'fizzbuzz'."\n";
+}
