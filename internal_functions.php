@@ -16,13 +16,39 @@ $array = array(1,2,3);
 // Unserialize the array $array, and output the results
 
 function isDefined($a){
-	if(isset($a)){
-		return '$a is SET';
+
+	if (is_array($a)){
+		var_dump($a) . PHP_EOL;
+		
+	}
+	elseif(isset($a)){
+		echo '$a is SET' . PHP_EOL;
 	}
 
 	else {
-		return '$a is EMPTY';
+		echo '$a is EMPTY' . PHP_EOL;
 	}
 }
+
+$nothing = 10;
+$something = 'Ryan';
+$array = array(1,2,3);
+
+isDefined($nothing);
+isDefined($something);
+isDefined($array);
+
+echo serialize($array) . PHP_EOL;
+$serializedArray = serialize($array);
+var_dump($serializedArray);
+
+$unserializedArray = unserialize($serializedArray);
+var_dump($unserializedArray);
+
+
+
+
+
+
 
 ?>
