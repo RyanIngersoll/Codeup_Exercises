@@ -34,20 +34,24 @@
 
  function humanized_list($string, $alphabetize = false) {
  	$array = explode(', ', $string);
+ 	// turns string into array
 
  	//var_dump($array);
 
  	if($alphabetize == TRUE){
  		asort($array);
+ 		// gives option to alphabatize the array
  	}
 
  	//var_dump($array);
 
  	$lastItem = array_pop($array);
- 	//var_dump($array);
+ 	//puts last item in array into seperate variable we use latter
 
  	$humanizedList = implode(', ', $array);
+ 	// converts array without last item back into string form.
  	$humanizedString =  $humanizedList . " and " . $lastItem . PHP_EOL;
+ 	// manipulates original string to include 'and' before the seperated last item
  	return $humanizedString;
   
  }
