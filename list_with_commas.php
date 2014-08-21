@@ -26,11 +26,12 @@
 // to pass the $physicists_array as the only argument, and your function will return the result.
 
 // Update your code to list the physicists by first name, in alphabetical order.
-// Create a second argument to make alphabetical sorting optional.
+// Create a second argument/parameter to make alphabetical sorting optional.
 // Default alphabetical sorting to false. If no args are passed, no sorting takes place.
 
 // 
-
+// use sort for 1 dimensional array
+// use asort for associate or multi-dimensional 
 
  function humanized_list($string, $alphabetize = false) {
  	$array = explode(', ', $string);
@@ -38,8 +39,8 @@
 
  	//var_dump($array);
 
- 	if($alphabetize == TRUE){
- 		asort($array);
+ 	if($alphabetize){
+ 		sort($array);
  		// gives option to alphabatize the array
  	}
 
@@ -67,6 +68,19 @@ $famous_fake_physicists = humanized_list($physicists_string, TRUE);
  echo "Some of the most famous fictional theoretical physicists are 
  {$famous_fake_physicists}" . PHP_EOL;
 
-
+// sort by last name
+// $physicists_string = 'Gordon Freeman, Samantha Carter, Sheldon Cooper, Quinn Mallory, Bruce Banner, Tony Stark';
+// // Create an array from the string above
+// $physicists_array = explode(', ', $physicists_string);
+// // A function to sort by last name.
+// function lastNameSort($a, $b) {
+// $aLast = end(explode(' ', $a));
+// $bLast = end(explode(' ', $b));
+// return strcasecmp($aLast, $bLast);
+// }
+// // Perform the sort:
+// uasort($physicists_array, 'lastNameSort');
+// // Print the result:
+// print_r($physicists_array);
 
 ?>
